@@ -32,35 +32,27 @@ public class LineSegment {
 	 * @return 1为重叠，0为接触，-1为不重叠
 	 */
 	public int overlap(LineSegment examiner) {
-		double left = Math.min(
-		        Math.min(Math.min(getStart(), getStart() + getLength()), examiner.getStart()),
-		        examiner.getStart() + examiner.getLength());
-		double right = Math.max(
-		        Math.max(Math.max(getStart(), getStart() + getLength()), examiner.getStart()),
-		        examiner.getStart() + examiner.getLength());
-		double len = right - left;
-		double acLen = Math.abs(getLength()) + Math.abs(examiner.getLength());
-		if (len < acLen) {
-			return 1;
-		} else if (getLength() == 0) {
-			if (getStart() > examiner.getStart()
-			        && getStart() < examiner.getStart() + examiner.getLength()) {
-				return 1;
-			} else if (getStart() == examiner.getStart()
-			        || getStart() == examiner.getStart() + examiner.getLength()) {
-				return 0;
-			}
-		} else if (examiner.getLength() == 0) {
-			if (examiner.getStart() > getStart()
-			        && examiner.getStart() < getStart() + getLength()) {
-				return 1;
-			} else if (examiner.getStart() == getStart()
-			        || examiner.getStart() == getStart() + getLength()) {
-				return 0;
-			}
-		} else if (len == acLen) {
-			return 0;
+		double s, l, s1, l1;
+		if (getLength() < 0) {
+			l = -getLength();
+			s = getStart() + getLength();
+		} else {
+			s = getStart();
+			l = getLength();
 		}
-		return -1;
+		if (examiner.getLength() < 0) {
+			l1 = -examiner.getLength();
+			s1 = examiner.getStart() + examiner.getLength();
+		} else {
+			s1 = examiner.getStart();
+			l1 = examiner.getLength();
+		}
+		if (s + l < s1 || s > s1 + l1) {
+			return -1;
+		} else if (s + l == s1 || s == s1 + l1) {
+			return 0;
+		} else {
+			return 1;
+		}
 	}
 }

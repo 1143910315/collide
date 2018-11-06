@@ -19,7 +19,7 @@ class TestLineSegmentOverlap {
 		// 测试用例不健全
 		return Stream.of(Arguments.of(1d, 18d, 20d, 30d, -1), Arguments.of(9d, 0d, 10d, 10d, -1),
 		        Arguments.of(9d, 1d, 10d, 10d, 0), Arguments.of(9d, 2d, 10d, 10d, 1),
-		        Arguments.of(10d, 0d, 10d, 10d, 0), Arguments.of(11d, -1d, 10d, 10d, 0),
+		        Arguments.of(10d, 0d, 10d, 10d, 0), Arguments.of(11d, -1d, 10d, 10d, 1),
 		        Arguments.of(19d, 1d, 10d, 10d, 1), Arguments.of(20d, 0d, 10d, 10d, 0),
 		        Arguments.of(21d, 0d, 10d, 10d, -1), Arguments.of(11.0, -2.0, 10d, 10d, 1),
 		        Arguments.of(11.0, -0.0, 10d, 10d, 1), Arguments.of(19.0, 0.0, 10d, 10d, 1),
