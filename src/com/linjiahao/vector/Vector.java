@@ -12,24 +12,29 @@ public class Vector {
 	}
 
 	public Vector(Point startingPoint, Point finishingPoint) {
-		this.startingPoint = startingPoint;
-		this.finishingPoint = finishingPoint;
+		this.startingPoint = new Point(startingPoint);
+		this.finishingPoint = new Point(finishingPoint);
+	}
+
+	public Vector(Vector vector) {
+		startingPoint = new Point(vector.startingPoint);
+		finishingPoint = new Point(vector.finishingPoint);
 	}
 
 	public Point getStartingPoint() {
-		return startingPoint;
+		return new Point(startingPoint);
 	}
 
 	public void setStartingPoint(Point startingPoint) {
-		this.startingPoint = startingPoint;
+		this.startingPoint = new Point(startingPoint);
 	}
 
 	public Point getFinishingPoint() {
-		return finishingPoint;
+		return new Point(finishingPoint);
 	}
 
 	public void setFinishingPoint(Point finishingPoint) {
-		this.finishingPoint = finishingPoint;
+		this.finishingPoint = new Point(finishingPoint);
 	}
 
 	public double getAngle() {
