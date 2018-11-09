@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import com.linjiahao.lineSegment.LineSegment;
+import com.linjiahao.line.LineSegment;
 
 @RunWith(Parameterized.class)
 class TestLineSegmentOverlap {

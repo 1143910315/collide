@@ -1,4 +1,4 @@
-package com.linjiahao.lineSegment;
+package com.linjiahao.line;
 
 public class LineSegment {
 	private double	start;

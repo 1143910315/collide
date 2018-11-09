@@ -30,4 +30,10 @@ public class Point {
 		this.y = y;
 	}
 
+	public double point2PointDistance(Point point) {
+		double x = point.x - this.x;
+		double y = point.y - this.y;
+		return Math.sqrt(x * x + y * y);
+	}
+
 }
