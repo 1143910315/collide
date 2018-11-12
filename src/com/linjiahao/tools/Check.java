@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.linjiahao.graphics.Graphics;
 import com.linjiahao.line.Line;
+import com.linjiahao.line.LineSegment;
 import com.linjiahao.point.Point;
 import com.linjiahao.vector.Vector;
 
@@ -42,18 +43,13 @@ public class Check {
 				}
 			}
 			if (pointMax != null && pointMax1 != null) {
-				if (pointMin.compareTo(pointMin1) > 0) {
-					Point swap = pointMin;
-					pointMin = pointMin1;
-					pointMin1 = swap;
-					swap = pointMax;
-					pointMax = pointMax1;
-					pointMax1 = swap;
-				}
-				int result = pointMax.compareTo(pointMax1);
-				if (result < 0) {
+				LineSegment lineSegment = new LineSegment(0, pointMax.compareTo(pointMin));
+				LineSegment lineSegment2 = new LineSegment(pointMin1.compareTo(pointMin),
+						pointMax1.compareTo(pointMin));
+				int overlap = lineSegment.overlap(lineSegment2);
+				if (overlap == -1) {
 					return -1;
-				} else if (result == 0) {
+				} else if (overlap == 0) {
 					isTouch = true;
 				}
 			}

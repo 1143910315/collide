@@ -54,6 +54,11 @@ public class Line {
 	public Point point2LinePedal(Point point) {
 		double A2addB2 = A * A + B * B;
 		return new Point((B * B * point.getX() - A * B * point.getY() - A * C) / A2addB2,
-				(-A * B * point.getX() + A * A * point.getY() - B * C) / A2addB2);
+				(A * A * point.getY() - A * B * point.getX() - B * C) / A2addB2);
+	}
+	
+	@Override
+	public String toString() {
+		return (A < 0 ? A : A) + "x" + (B < 0 ? B : "+" + B) + "y" + (C < 0 ? C : "+" + C) + "=0";
 	}
 }
