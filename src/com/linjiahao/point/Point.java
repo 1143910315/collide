@@ -1,6 +1,6 @@
 package com.linjiahao.point;
 
-public class Point {
+public class Point implements Comparable<Point> {
 	private double	x;
 	private double	y;
 	
@@ -69,4 +69,18 @@ public class Point {
 		return true;
 	}
 	
+	@Override
+	public int compareTo(Point o) {
+		if (o.x != x) {
+			return (int) (x - o.x);
+		} else if (o.y != y) {
+			return (int) (y - o.y);
+		}
+		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		return "(" + x + "," + y + ")";
+	}
 }

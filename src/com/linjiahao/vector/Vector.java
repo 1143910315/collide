@@ -1,5 +1,6 @@
 package com.linjiahao.vector;
 
+import com.linjiahao.line.Line;
 import com.linjiahao.point.Point;
 
 public class Vector {
@@ -58,6 +59,10 @@ public class Vector {
 		
 	}
 	
+	public Line vector2Line() {
+		return new Line(startingPoint, finishingPoint);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -96,4 +101,8 @@ public class Vector {
 		return true;
 	}
 	
+	@Override
+	public String toString() {
+		return "{" + startingPoint.toString() + "->" + finishingPoint.toString() + "}";
+	}
 }

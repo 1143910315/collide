@@ -3,6 +3,7 @@ package com.linjiahao.graphics;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 import com.linjiahao.point.Point;
 import com.linjiahao.vector.Vector;
@@ -21,7 +22,7 @@ public class Graphics {
 		}
 	}
 	
-	public Graphics(ArrayList<Vector> vectors) {
+	public Graphics(List<Vector> vectors) {
 		vectors.forEach((e) -> {
 			head.add(new Vector(e));
 		});
