@@ -12,14 +12,14 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Point startingPoint = new Point(0, 0);
-		Point middlePoint = new Point(0, 1);
-		Point finishingPoint = new Point(1, 0);
+		Point middlePoint = new Point(4, 0);
+		Point finishingPoint = new Point(0, 4);
 		List<Vector> vectors = Arrays.asList(new Vector(startingPoint, middlePoint),
 				new Vector(middlePoint, finishingPoint), new Vector(finishingPoint, startingPoint));
 		Graphics graphics = new Graphics(vectors);
-		Point startingPoint1 = new Point(0, 1);
-		Point middlePoint1 = new Point(2, 1);
-		Point finishingPoint1 = new Point(1, 2);
+		Point startingPoint1 = new Point(1, 1);
+		Point middlePoint1 = new Point(5, 5);
+		Point finishingPoint1 = new Point(5, 8);
 		List<Vector> vectors1 = Arrays.asList(new Vector(startingPoint1, middlePoint1),
 				new Vector(middlePoint1, finishingPoint1),
 				new Vector(finishingPoint1, startingPoint1));
