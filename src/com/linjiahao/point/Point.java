@@ -1,5 +1,7 @@
 package com.linjiahao.point;
 
+import java.text.DecimalFormat;
+
 public class Point implements Comparable<Point> {
 	private double	x;
 	private double	y;
@@ -71,16 +73,19 @@ public class Point implements Comparable<Point> {
 	
 	@Override
 	public int compareTo(Point o) {
-		if (o.x != x) {
-			return (int) (x - o.x);
-		} else if (o.y != y) {
-			return (int) (y - o.y);
+		int xCut = (int) (x * 100000 - o.x * 100000);
+		int yCut = (int) (y * 100000 - o.y * 100000);
+		if (xCut != 0) {
+			return xCut;
+		} else if (yCut != 0) {
+			return yCut;
 		}
 		return 0;
 	}
 	
 	@Override
 	public String toString() {
-		return "(" + x + "," + y + ")";
+		DecimalFormat format = new DecimalFormat("#.######");
+		return "(" + format.format(x) + "," + format.format(y) + ")";
 	}
 }

@@ -1,5 +1,7 @@
 package com.linjiahao.line;
 
+import java.text.DecimalFormat;
+
 import com.linjiahao.exception.NonstandardException;
 import com.linjiahao.point.Point;
 
@@ -59,6 +61,8 @@ public class Line {
 	
 	@Override
 	public String toString() {
-		return (A < 0 ? A : A) + "x" + (B < 0 ? B : "+" + B) + "y" + (C < 0 ? C : "+" + C) + "=0";
+		DecimalFormat format = new DecimalFormat("#.######");
+		return format.format(A) + "x" + (B < 0 ? format.format(B) : "+" + format.format(B)) + "y"
+				+ (C < 0 ? format.format(C) : "+" + format.format(C)) + "=0";
 	}
 }

@@ -17,7 +17,7 @@ public class Main {
 		List<Vector> vectors = Arrays.asList(new Vector(startingPoint, middlePoint),
 				new Vector(middlePoint, finishingPoint), new Vector(finishingPoint, startingPoint));
 		Graphics graphics = new Graphics(vectors);
-		Point startingPoint1 = new Point(1, 1);
+		Point startingPoint1 = new Point(1.99999, 1.99999);
 		Point middlePoint1 = new Point(5, 5);
 		Point finishingPoint1 = new Point(5, 8);
 		List<Vector> vectors1 = Arrays.asList(new Vector(startingPoint1, middlePoint1),
